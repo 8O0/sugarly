@@ -1,0 +1,8 @@
+{
+  "name": "Sugarly",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "13a02d89"
+}
