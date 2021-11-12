@@ -1,7 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Playground
+      <ion-button style="float: right; padding-right: 20px" color="light">
+        <ion-icon name="alert-circle-outline" (click)="infoPressed()"></ion-icon>
+      </ion-button>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +16,6 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <mat-slider aria-label="unit(s)"></mat-slider>
+
 </ion-content>
