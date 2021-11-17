@@ -22,7 +22,15 @@
     width: 90%;
     align-content: center;
     ">
-
+    <canvas baseChart 
+    [datasets]="lineChartData" 
+    [labels]="lineChartLabels" 
+    [options]="lineChartOptions"
+    [colors]="lineChartColors" 
+    [legend]="lineChartLegend" 
+    [chartType]="lineChartType" 
+    [plugins]="lineChartPlugins">
+    </canvas>
   </div>
 
   <div style="position: absolute;
@@ -34,8 +42,10 @@
     ">
     <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="10" min="0" max="1000"
       aria-label="units"></mat-slider>
-    <mat-slider aria-label="unit(s)"></mat-slider>
-    <mat-slider aria-label="unit(s)"></mat-slider>
+      <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="10" min="0" max="1000"
+      aria-label="units"></mat-slider>
+      <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="10" min="0" max="1000"
+      aria-label="units"></mat-slider>
   </div>
 
 </ion-content>
