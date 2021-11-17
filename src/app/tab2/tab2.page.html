@@ -22,14 +22,8 @@
     width: 90%;
     align-content: center;
     ">
-    <canvas baseChart 
-    [datasets]="lineChartData" 
-    [labels]="lineChartLabels" 
-    [options]="lineChartOptions"
-    [colors]="lineChartColors" 
-    [legend]="lineChartLegend" 
-    [chartType]="lineChartType" 
-    [plugins]="lineChartPlugins">
+    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+      [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" [plugins]="lineChartPlugins">
     </canvas>
   </div>
 
@@ -40,11 +34,12 @@
     height: 30%;
     color: white;
     ">
-    <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="10" min="0" max="1000"
+    <mat-slider thumbLabel [(ngModel)]="value1" (change)="refreshData()" [displayWith]="formatLabel1" tickInterval="1000" step="10" min="0"
+      max="1000" aria-label="units">
+    </mat-slider>
+    <mat-slider thumbLabel [(ngModel)]="value2" (change)="refreshData()" [displayWith]="formatLabel2" tickInterval="1000" step="10" min="0" max="1000"
       aria-label="units"></mat-slider>
-      <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="10" min="0" max="1000"
-      aria-label="units"></mat-slider>
-      <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="10" min="0" max="1000"
+    <mat-slider thumbLabel [(ngModel)]="value3" (change)="refreshData()" [displayWith]="formatLabel3" tickInterval="1000" step="10" min="0" max="1000"
       aria-label="units"></mat-slider>
   </div>
 

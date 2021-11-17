@@ -9,25 +9,38 @@ import { logging } from 'selenium-webdriver';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  value = 0;
-
+  value1 = 0;
+  value2 = 0;
+  value3 = 0;
   ngOnInit() {
     
   }
 
-  formatLabel(value: number) {
-    this.value=value;
+  formatLabel1(value: number) {
+    this.value1=value;
+
+    return value;
+  }
+  formatLabel2(value: number) {
+    this.value2=value;
+
+    return value;
+  }
+  formatLabel3(value: number) {
+    this.value3=value;
 
     return value;
   }
 
   refreshData() {
+    console.log(this.value1,'\n',this.value2,'\n',this.value3);
+
     this.lineChartData[0].data =[
-      this.value + 1,
-      this.value + 3,
-      this.value + 2,
-      this.value + 1,
-      this.value + 3
+      this.value1 + 1,
+      this.value2 + 10,
+      this.value3 + 20/*,
+      this.value2 + 1,
+      this.value1 + 3*/
     ]
   }
 
@@ -35,6 +48,7 @@ export class Tab2Page {
 
   infoPressed() {
     console.log("Infobutton pressed");
+    this.refreshData()
   }
 
   lineChartData: ChartDataSets[] = [
