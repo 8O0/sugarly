@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { MatSliderModule } from '@angular/material/slider';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { MatSliderModule } from '@angular/material/slider';
     ExploreContainerComponentModule,
     Tab2PageRoutingModule, 
     MatFormFieldModule, 
-    MatSliderModule
+    MatSliderModule,
+    ChartsModule
   ],
   declarations: [Tab2Page]
 })
