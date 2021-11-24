@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
-import { logging } from 'selenium-webdriver';
+
 
 @Component({
   selector: 'app-tab2',
@@ -9,71 +9,86 @@ import { logging } from 'selenium-webdriver';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  value1 = 0;
-  value2 = 0;
-  value3 = 0;
+  value1: number = 0;
+  value2: number = 0;
+  value3: number = 0;
+  value4: number = 0;
+
+  valueStnd1: number = 80;
+  valueStnd2: number = 130;
+  valueStnd3: number = 90;
+  valueStnd4: number = 95;
+
+
   ngOnInit() {
-    
-  }
 
-  formatLabel1(value: number) {
-    this.value1=value;
-
-    return value;
-  }
-  formatLabel2(value: number) {
-    this.value2=value;
-
-    return value;
-  }
-  formatLabel3(value: number) {
-    this.value3=value;
-
-    return value;
-  }
-
-  refreshData() {
-    console.log(this.value1,'\n',this.value2,'\n',this.value3);
-
-    this.lineChartData[0].data =[
-      this.value1 + 1,
-      this.value2 + 10,
-      this.value3 + 20/*,
-      this.value2 + 1,
-      this.value1 + 3*/
-    ]
   }
 
   constructor() { }
 
-  infoPressed() {
-    console.log("Infobutton pressed");
-    this.refreshData()
+  formatLabel1(value: number) {
+    this.valueStnd1 = value;
+
+    return value + 'g';
+  }
+  formatLabel2(value: number) {
+    this.valueStnd2 = value;
+
+    return value;
+  }
+  formatLabel3(value: number) {
+    this.valueStnd3 = value;
+    let sign = value < 0 ?
+      "-" :
+      "";
+    let absoluted = Math.abs(value);
+    let min = Math.floor(absoluted);
+    let sec = Math.floor(absoluted * 60) % 60;
+    let timeInHours = sign +
+      (min < 10 ? "0" : "") +
+      min +
+      ":" +
+      (sec < 10 ? "0" : "") +
+      sec;
+
+    return timeInHours;
+  }
+
+  refreshData() {
+    console.log('value1', this.value1, 'value2', this.value2, 'value3', this.value3, 'value4', this.value4);
+    console.log('valueStnd1', this.value1, 'valueStnd2', this.value2, 'valueStnd3', this.value3, 'valueStnd4', this.valueStnd4);
+    this.lineChartData[0].data = [
+      this.valueStnd1-this.value1,
+      this.valueStnd2-this.value2,
+      this.valueStnd3-this.value3,
+      this.valueStnd4-this.value4,
+    ]
   }
 
   lineChartData: ChartDataSets[] = [
     {
       data: [
-        1,
-        3,
-        2,
-        1,
-        3
+        this.valueStnd1,
+        this.valueStnd2,
+        this.valueStnd3,
+        this.valueStnd4
       ],
-      label: 'Bullshit'
+      label: 'Blutzuckerspiegel'
     },
   ];
 
-  lineChartLabels: Label[] = ['8:00', '12:00', '16:00', '20:00', '24:00'];
+  lineChartLabels: Label[] = ['07:00', '08:00', '09:00', '10:00'];
 
-  lineChartOptions = {
+  /*lineChartOptions = {
     responsive: true,
-  };
+  };*/
+
+
 
   lineChartColors: Color[] = [
     {
-      borderColor: 'rgba(22, 16, 50)',
-      backgroundColor: 'rgba(224, 109, 6,0.5)',
+      borderColor: 'red',
+      backgroundColor: 'rgba(100, 300, 100,0.5)',
     },
   ];
 
@@ -81,4 +96,27 @@ export class Tab2Page {
   lineChartPlugins = [];
   lineChartType = 'line';
 
+  public lineChartOptions: ChartOptions = {
+    responsive: true,
+    scales: {
+      xAxes: [{
+        ticks: {
+          min: 0,
+          max: 50,
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 50,
+          max: 250,
+        }
+      }]
+    }
+  };
+
+
+
+  infoPressed() {
+    console.log("Infobutton pressed");
+  }
 }
