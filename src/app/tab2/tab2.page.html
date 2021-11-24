@@ -2,8 +2,8 @@
   <ion-toolbar>
     <ion-title>
       Playground
-      <ion-button style="float: right; padding-right: 20px" color="light">
-        <ion-icon name="alert-circle-outline" (click)="infoPressed()"></ion-icon>
+      <ion-button style="float: right; padding-right: 20px" color="light" (click)="infoPressed()">
+        <ion-icon name="alert-circle-outline"></ion-icon>
       </ion-button>
     </ion-title>
   </ion-toolbar>
@@ -16,6 +16,53 @@
     </ion-toolbar>
   </ion-header>
 
-    <mat-slider aria-label="unit(s)"></mat-slider>
+  <ion-content style="
+   border-radius: 50px;
+    height: 50%;
+    width: 90%;
+    float:center;
+    ">
+    <canvas baseChart
+    height="400" 
+    width="500" 
+    [datasets]="lineChartData" 
+    [labels]="lineChartLabels" 
+    [options]="lineChartOptions"
+    [colors]="lineChartColors" 
+    [legend]="lineChartLegend" 
+    [chartType]="lineChartType" 
+    [plugins]="lineChartPlugins">
+    </canvas>
+  </ion-content>
 
+
+  <ion-content style="
+  border-radius: 50px;
+  height: 40%;
+  width: 90%;
+  float:center; position: absolute;bottom: 30px;
+  ">
+  <ul style="list-style-type:none;padding:0;">
+      <li>
+        <ion-label>Kohlenhydrate</ion-label>
+        <mat-slider #slidertop thumbLabel [(ngModel)]="value1" (change)="refreshData()"
+          [displayWith]="formatLabel1" tickInterval="1" step="10" min="0" max="100" aria-label="units">
+        </mat-slider>
+      </li>
+
+      <li>
+        <ion-label>Steps</ion-label>
+        <mat-slider #slidermiddle (change)="refreshData()" thumbLabel [(ngModel)]="value2"
+          [displayWith]="formatLabel2" tickInterval="1" step="1" min="0" max="100" aria-label="units">
+        </mat-slider>
+      </li>
+
+      <li>
+        <ion-label>Bewegung in Stunden pro Tag</ion-label>
+        <mat-slider #sliderbottom (change)="refreshData()" thumbLabel [(ngModel)]="value3"
+          [displayWith]="formatLabel3" tickInterval="1" step="0.25" min="0" max="5" aria-label="units">
+        </mat-slider>
+      </li>
+    </ul>
+  </ion-content>
 </ion-content>
