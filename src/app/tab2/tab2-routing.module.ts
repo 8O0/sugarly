@@ -6,7 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: Tab2Page,
+  },
+  {
+    path: 'infodialog',
+    loadChildren: () => import('./infodialog/infodialog.module').then( m => m.InfodialogPageModule)
   }
+
 ];
 
 @NgModule({

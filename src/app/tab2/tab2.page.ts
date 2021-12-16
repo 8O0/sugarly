@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
-
+import { InfodialogPage } from './infodialog/infodialog.page';
 
 @Component({
   selector: 'app-tab2',
@@ -27,7 +28,7 @@ export class Tab2Page {
 
   }
 
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   /** 
    * Updated das Bubbleicon auf dem Slider und addiert die Einheit 'g' für Gramm hinzu 
@@ -146,5 +147,14 @@ export class Tab2Page {
    */
   infoPressed() {
     console.log("Infobutton pressed")
+    this.presentModal()
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: InfodialogPage,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
   }
 }

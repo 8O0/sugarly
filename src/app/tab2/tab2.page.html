@@ -9,6 +9,8 @@
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -22,16 +24,9 @@
     width: 90%;
     float:center;
     ">
-    <canvas baseChart
-    height="400" 
-    width="500" 
-    [datasets]="lineChartData" 
-    [labels]="lineChartLabels" 
-    [options]="lineChartOptions"
-    [colors]="lineChartColors" 
-    [legend]="lineChartLegend" 
-    [chartType]="lineChartType" 
-    [plugins]="lineChartPlugins">
+    <canvas baseChart height="400" width="500" [datasets]="lineChartData" [labels]="lineChartLabels"
+      [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+      [plugins]="lineChartPlugins">
     </canvas>
   </ion-content>
 
@@ -42,7 +37,7 @@
   width: 90%;
   float:center; position: absolute;bottom: 30px;
   ">
-  <ul style="list-style-type:none;padding:0;">
+    <ul style="list-style-type:none;padding:0;">
       <li>
         <ion-label>Kohlenhydrate</ion-label>
         <mat-slider #slidertop thumbLabel [(ngModel)]="carbohydrateSlider" (change)="refreshData()"
