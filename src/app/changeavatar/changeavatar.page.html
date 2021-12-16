@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Wechsle den Avatar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides mode="android" scrollbar="android">
+    <!--TODO-->
+    <ion-slide *ngFor="let avatar of allavatars">
+      <ion-img [src]="avatar.getImageDefault()"></ion-img>
+      <ion-label>{{avatar.getName()}}</ion-label>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

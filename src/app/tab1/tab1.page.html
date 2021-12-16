@@ -14,22 +14,14 @@
   </ion-header>
   <div class="top-area">
     <div class="avatar-area">
-      
+      <img [src]="activeAvatar.getImageSmile()">
     </div>
 
     <div class="ask-area">
-        <ion-button (click)="askQuestion()" style="height: 100px" class="ion-activatable ripple-parent ask-button">
-          Hast du eine Frage?
+        <ion-button (click)="askQuestion()" class="ion-activatable ripple-parent ask-button">
+          Hast du eine Frage für mich?
           <ion-ripple-effect type="unbounded"></ion-ripple-effect>
         </ion-button>
-      <ion-item *ngIf="askingQuestion">
-        <ion-label position="floating">Gib hier deine Frage ein</ion-label>
-        <ion-input [(ngModel)]="avatarQuestion.value"></ion-input>
-      </ion-item>
-      <ion-button (click)="askedQuestion()" style="height: 100px" class="ion-activatable ripple-parent ask-button">
-        Frage stellen.
-        <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-      </ion-button>
     </div>
   </div>
 
