@@ -4,6 +4,8 @@ export class AvatarQuestion {
     id: number;
     value: string;
     date: Date;
+    type: string;
+    src: string;
 
     constructor(){}
 

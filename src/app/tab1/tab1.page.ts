@@ -18,9 +18,9 @@ import { Observable } from 'rxjs';
 })
 export class Tab1Page {
   //API Liste
-  //static API_ENDPOINT = 'https://reqres.in/api/posts'
   static API_ENDPOINT = 'http://demo8271201.mockable.io/testdaten'
   //API Variables
+  sub;
   postId;
   errorMessage;
   //Fragenarray initialisieren
@@ -36,6 +36,10 @@ export class Tab1Page {
     this.questions = FAQ_QUESTIONS;
     this.avatarQuestion = new AvatarQuestion();
     this.askedAvatarQuestions = [];
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
   //Verhalten beim klicken einer Frage
@@ -56,23 +60,19 @@ export class Tab1Page {
   }
 
   //Speichet die Avatar Frage in einem JSON ab
+  // qarr = Fragenliste, welche bereits zur Laufzeit gestellt wurden
   saveAvatarQuestion(qarr: AvatarQuestion[]): boolean {
-    //Prüfe Input
-    if (this.avatarQuestion.value == "" || this.avatarQuestion.value == undefined){
+    if (this.avatarQuestion.value == '' || this.avatarQuestion.value == undefined){
       return false;
     } else {
-      //Ergänze das Objekt mit den korrekten Daten
       this.avatarQuestion.id = qarr.length + 1;
       this.avatarQuestion.date = new Date();
-      //Konvertiere das Object in ein JSON Objekt und hänge es an die Frageliste an
+      this.avatarQuestion.type = 'question-avatar';
+      this.avatarQuestion.src = 'Sugarly';
       let JSONtest = JSON.parse(JSON.stringify(this.avatarQuestion));
       qarr.push(JSONtest);
-      //console.log(qarr);
-      //Frage in Datei speichern
-      //this.postData(qarr);
-      let test = this.getData();
-      //Frage reseten, damit weitere gestellt werden können
-      this.avatarQuestion.value = "";
+      console.log(qarr);
+      this.avatarQuestion.value = '';
       return true;
     }
   }
@@ -112,7 +112,8 @@ export class Tab1Page {
     this.askingQuestion = false;
   }
 
-  //Send Data to external POST API Service
+  //Sende Daten zu externem REST API
+  // provData = Daten, welche zur REST API gesendet werden sollen
   postData(provData: AvatarQuestion[]):boolean {
     this.http.post<any>(Tab1Page.API_ENDPOINT, provData).subscribe({
         next: data => {
@@ -126,13 +127,10 @@ export class Tab1Page {
     return true;
   }
 
-  //Get Data from external GET API Service
+  //Erhalte Daten von externem REST API
   getData(){
-    let temp = new AvatarQuestion;
-    this.http.get(Tab1Page.API_ENDPOINT).subscribe((data: AvatarQuestion[]) => {
-      //TODO Convert into JSON Object
-      console.log(data);
+    this.sub = this.http.get(Tab1Page.API_ENDPOINT).subscribe((data: AvatarQuestion[]) => {
+      this.askedAvatarQuestions = Object.assign(data);
     })
-    
   }
 }

@@ -18,18 +18,18 @@
     </div>
 
     <div class="ask-area">
-        <button (click)="askQuestion()" style="height: 100px" class="ion-activatable ripple-parent ask-button">
+        <ion-button (click)="askQuestion()" style="height: 100px" class="ion-activatable ripple-parent ask-button">
           Hast du eine Frage?
           <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-        </button>
+        </ion-button>
       <ion-item *ngIf="askingQuestion">
         <ion-label position="floating">Gib hier deine Frage ein</ion-label>
         <ion-input [(ngModel)]="avatarQuestion.value"></ion-input>
       </ion-item>
-      <button (click)="askedQuestion()" style="height: 100px" class="ion-activatable ripple-parent ask-button">
+      <ion-button (click)="askedQuestion()" style="height: 100px" class="ion-activatable ripple-parent ask-button">
         Frage stellen.
         <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-      </button>
+      </ion-button>
     </div>
   </div>
 
