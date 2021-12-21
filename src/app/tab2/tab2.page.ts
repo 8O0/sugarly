@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { InfodialogPage } from './infodialog/infodialog.page';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-tab2',
@@ -28,7 +29,7 @@ export class Tab2Page {
 
   }
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, public dialog: MatDialog) { }
 
   /** 
    * Updated das Bubbleicon auf dem Slider und addiert die Einheit 'g' für Gramm hinzu 
@@ -115,7 +116,7 @@ export class Tab2Page {
 
   lineChartColors: Color[] = [
     {
-      borderColor: 'rgba(22, 16, 50,0.7)',
+      borderColor: 'rgba(255, 64, 129,0.7)',
       backgroundColor: 'rgba(255, 196, 9,0.7)',
     },
   ]
@@ -147,14 +148,25 @@ export class Tab2Page {
    */
   infoPressed() {
     console.log("Infobutton pressed")
-    this.presentModal()
+    //this.presentModal()
+    this.dialog.open(DialogDataExampleDialog, {
+    });
   }
 
+/**
   async presentModal() {
     const modal = await this.modalController.create({
       component: InfodialogPage,
       cssClass: 'my-custom-class'
     });
     return await modal.present();
-  }
+  }*/
+}
+
+@Component({
+  selector: 'dialog-infodialog-dialog',
+  templateUrl: '/infodialog/infodialog.page.html',
+})
+export class DialogDataExampleDialog {
+  //constructor() {}
 }

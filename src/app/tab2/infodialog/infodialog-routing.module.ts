@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { InfodialogPage } from './infodialog.page';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const routes: Routes = [
   {
@@ -15,3 +16,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class InfodialogPageRoutingModule {}
+
