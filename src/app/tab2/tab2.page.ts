@@ -71,7 +71,7 @@ export class Tab2Page {
   refreshData() {
     let cfCarbs = 2.5 // Correction Factor Carbohydrates. Der Faktor um eine Simulation zu ermöglichen
     let cfUnits = 2.9 // Correction Factor Carbohydrates. Der Faktor um eine Simulation zu ermöglichen
-    let cfActivity = 15 // Correction Factor Carbohydrates. Der Faktor um eine Simulation zu ermöglichen
+    let cfActivity = 10 // Correction Factor Carbohydrates. Der Faktor um eine Simulation zu ermöglichen
 
     let carbValue = this.carbohydrateSlider * cfCarbs
     let unitValue = this.unitsSlider * cfUnits
