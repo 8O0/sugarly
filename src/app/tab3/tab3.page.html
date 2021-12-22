@@ -15,10 +15,10 @@
 
   <div *ngIf="!questionShow" class="wrapper-question">
     <div class="yellow">
-      <h2>Welches hat mehr Zucker?</h2>
-      <button (click)="showAnswer()"><img src="../../assets/imgs/carrot.png" width="100px" height="100px">
+      <h2>{{questionObject.question}}</h2>
+      <button class="imageButton" (click)="showAnswer()"><img src="../../assets/imgs/carrot.png" width="100px" height="100px">
       </button>
-      <button (click)="showAnswer()"><img src="../../assets/imgs/apple.png" width="100px" height="100px">
+      <button class="imageButton" (click)="showAnswer()"><img src="../../assets/imgs/apple.png" width="100px" height="100px">
       </button>
     </div>
 </div>
@@ -68,7 +68,7 @@
   </div>
 </div>
 <div *ngIf="!answerShow" class="wrapper-answer">
-  <img src="../../assets/imgs/correct.png" width="100px" height="100px">"
+  <img class="centeredImage" src="../../assets/imgs/correct.png" width="100px" height="100px">
 <div>
 <h2>Richtig</h2>
 <p>Pures Obst ist gesund und prinzipiell gut für den Körper. Trotzdem kann es wichtig sein, den Zuckergehalt von Obst im Auge zu behalten. Die Tabelle zeigt, wie viel Zucker und Kalorien in 100 Gramm verschiedener frischer Obstsorten stecken. </p>

@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+import { data } from './questions';
+
+interface Question {
+  id: number;
+  question: string;
+  answer: string;
+  explanation: string;
+}
 
 @Component({
   selector: 'app-tab3',
@@ -20,7 +28,8 @@ export class Tab3Page {
     this.questionShow = !this.questionShow;
     this.answerShow = !this.answerShow;
    }
+   questions: Question[] = data;
 
   constructor() {}
-
+  questionObject = this.questions[0];
 }

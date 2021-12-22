@@ -35,6 +35,16 @@ button {
     margin-bottom: 100px;
 }
 
+.imageButton {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.centeredImage {
+    display: block;
+    margin: auto;
+}
+
 /*.wrapper-question {
     visibility: visible;
 }
