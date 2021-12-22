@@ -13,13 +13,67 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="wrapper-question">
-<app-tab3-question></app-tab3-question>
+  <div *ngIf="!questionShow" class="wrapper-question">
+    <div class="yellow">
+      <h2>Welches hat mehr Zucker?</h2>
+      <button (click)="showAnswer()"><img src="../../assets/imgs/carrot.png" width="100px" height="100px">
+      </button>
+      <button (click)="showAnswer()"><img src="../../assets/imgs/apple.png" width="100px" height="100px">
+      </button>
+    </div>
 </div>
-<div class="wrapper-score">
-<app-tab3-score></app-tab3-score>
+<div *ngIf="scoreShow" class="wrapper-score">
+  <div>
+    <table>
+      <tr>
+        <th>Rang</th>
+        <th>Name</th>
+        <th>Punkte</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Luk</td>
+        <td>41</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Nik</td>
+        <td>36</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Jel</td>
+        <td>32</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Tim</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>abc</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Han</td>
+        <td>5</td>
+      </tr>
+    </table>
+    
+  </div>
+  <div>
+    <button (click)="showQuestion()">Start</button>
+  </div>
 </div>
-<div class="wrapper-answer">
-  <app-tab3-answer></app-tab3-answer>
+<div *ngIf="!answerShow" class="wrapper-answer">
+  <img src="../../assets/imgs/correct.png" width="100px" height="100px">"
+<div>
+<h2>Richtig</h2>
+<p>Pures Obst ist gesund und prinzipiell gut für den Körper. Trotzdem kann es wichtig sein, den Zuckergehalt von Obst im Auge zu behalten. Die Tabelle zeigt, wie viel Zucker und Kalorien in 100 Gramm verschiedener frischer Obstsorten stecken. </p>
+<button>Weiter</button>
+</div>
+
   </div>
 </ion-content>

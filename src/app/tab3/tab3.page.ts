@@ -6,6 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  questionShow = true;
+  scoreShow = true;
+  answerShow = true;
+  
+
+  showQuestion() {
+   this.questionShow = !this.questionShow;
+   this.scoreShow = !this.scoreShow;
+  }
+
+  showAnswer() {
+    this.questionShow = !this.questionShow;
+    this.answerShow = !this.answerShow;
+   }
 
   constructor() {}
 
