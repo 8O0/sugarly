@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+import { data } from './questions';
+
+interface Question {
+  id: number;
+  question: string;
+  answer: string;
+  explanation: string;
+}
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +14,22 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  questionShow = true;
+  scoreShow = true;
+  answerShow = true;
+  
+
+  showQuestion() {
+   this.questionShow = !this.questionShow;
+   this.scoreShow = !this.scoreShow;
+  }
+
+  showAnswer() {
+    this.questionShow = !this.questionShow;
+    this.answerShow = !this.answerShow;
+   }
+   questions: Question[] = data;
 
   constructor() {}
-
+  questionObject = this.questions[0];
 }
