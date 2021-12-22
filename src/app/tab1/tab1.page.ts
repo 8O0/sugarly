@@ -33,13 +33,13 @@ export class Tab1Page {
   askedAvatarQuestions: AvatarQuestion[];
   avatarQuestion: AvatarQuestion;
   activeAvatar: Avatar;
-  
-  
+
+
   constructor(private toastController: ToastController,
-              private http: HttpClient,
-              public routerOutlet: IonRouterOutlet,
-              public modalController: ModalController, 
-              private faqQuestionService: FAQQuestionService) {
+    private http: HttpClient,
+    public routerOutlet: IonRouterOutlet,
+    public modalController: ModalController,
+    private faqQuestionService: FAQQuestionService) {
     this.questions = FAQ_QUESTIONS;
     this.avatarQuestion = new AvatarQuestion();
     this.askedAvatarQuestions = [];
@@ -68,11 +68,11 @@ export class Tab1Page {
         'activeAvatar': a
       }
     });
-    
+
     return await modal.present();
   }
 
-  
+
   /**
    * //Zeigt das Modal für die Änderung des Avatars an
    * @returns Modalfenster für Avatarwechsel
@@ -82,10 +82,10 @@ export class Tab1Page {
       component: ChangeavatarPage,
       cssClass: 'changeavatar.page.scss',
       componentProps: {
-        
+
       }
     });
-    
+
     return await modal.present();
   }
 
@@ -102,14 +102,14 @@ export class Tab1Page {
   askQuestion(): void {
     this.presentAskModal(this.askedAvatarQuestions, this.activeAvatar);
   }
-  
+
   /**
    * Datenverarbeitung nach gestellten Fragen
    */
   askedQuestion(): void {
-    if (true){
+    if (true) {
       this.toastQuestionSaved();
-    } else{
+    } else {
       this.toastQuestionNotSaved();
     }
   }
@@ -164,15 +164,15 @@ export class Tab1Page {
    * @param provData Zu sendende Daten
    * @returns Status der Sendung
    */
-  postData(provData: AvatarQuestion[]):boolean {
+  postData(provData: AvatarQuestion[]): boolean {
     this.http.post<any>(Tab1Page.API_ENDPOINT, provData).subscribe({
-        next: data => {
-            this.postId = data.id;
-        },
-        error: error => {
-            this.errorMessage = error.message;
-            console.error('There was an error!', error);
-        }
+      next: data => {
+        this.postId = data.id;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', error);
+      }
     })
     return true;
   }
@@ -180,7 +180,7 @@ export class Tab1Page {
   /**
    * Erhalte Daten von externem REST API
    */
-  getData(){
+  getData() {
     this.sub = this.http.get(Tab1Page.API_ENDPOINT).subscribe((data: AvatarQuestion[]) => {
       this.askedAvatarQuestions = Object.assign(data);
     })
