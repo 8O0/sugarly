@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-tab3-score',
@@ -10,5 +11,6 @@ export class Tab3ScoreComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
+
 
 }
