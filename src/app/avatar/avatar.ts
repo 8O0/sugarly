@@ -1,4 +1,5 @@
 export class Avatar {
+    private id: number;
     private name: string;
     private sex: string;
     private imageDefault: string;
@@ -17,13 +18,15 @@ export class Avatar {
      * @param imageSmile Pfad zum Smile-Bild des Avatars
      * @param imageTalking Pfad zum Talking-Bild des Avatars
      */
-    constructor (name: string, 
+    constructor (id: number,
+                name: string, 
                 sex: string, 
                 imageDefault: string, 
                 imageGrin: string, 
                 imageLove: string, 
                 imageSmile: string, 
                 imageTalking: string){
+        this.id = id;
         this.name = name;
         this.sex = sex;
         this.imageDefault = imageDefault;
@@ -31,6 +34,14 @@ export class Avatar {
         this.imageLove = imageLove;
         this.imageSmile = imageSmile;
         this.imageTalking = imageTalking;
+    }
+
+    /**
+     * Get-Funktion
+     * @returns ID des Avatars
+     */
+    getID():number{
+        return this.id;
     }
 
     /**

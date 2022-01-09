@@ -82,8 +82,14 @@ export class Tab1Page {
       component: ChangeavatarPage,
       cssClass: 'changeavatar.page.scss',
       componentProps: {
-
+        'allAvatars': AVATAR_COLLECTION,
+        'selectedAvatar': this.activeAvatar
       }
+    });
+
+    modal.onDidDismiss()
+      .then((data) => {
+        this.activeAvatar = data['data'];
     });
 
     return await modal.present();

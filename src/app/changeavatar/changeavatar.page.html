@@ -5,11 +5,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides mode="android" scrollbar="android">
-    <!--TODO-->
-    <ion-slide *ngFor="let avatar of allavatars">
-      <ion-img [src]="avatar.getImageDefault()"></ion-img>
-      <ion-label>{{avatar.getName()}}</ion-label>
-    </ion-slide>
-  </ion-slides>
+  <div class="avatarSlider">
+    <ion-slides #slider mode="android" scrollbar="android">
+      <ion-slide *ngFor="let avatar of allAvatars | keyvalue">
+        <ion-img [src]="avatar.value.getImageDefault()"></ion-img>
+        <ion-label #slideName>{{avatar.value.getName()}}</ion-label>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ion-button (click)="selectAvatar()">
+    Ausw&auml;hlen
+  </ion-button>
+  <ion-button (click)="dismiss()">
+    Abbrechen
+  </ion-button>
 </ion-content>
