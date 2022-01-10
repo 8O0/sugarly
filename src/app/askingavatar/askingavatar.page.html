@@ -6,18 +6,25 @@
 
 <ion-content>
   <ion-img [src]="activeAvatar.getImageTalking()"></ion-img>
-  <p>Hey, wie kann ich dir helfen?</p>
-
-  <ion-item>
-    <ion-label position="floating">Gib hier deine Frage ein</ion-label>
-    <ion-input [(ngModel)]="avatarQuestion.value"></ion-input>
-  </ion-item>
-  <ion-button (click)="askedQuestion()" class="ion-activatable ripple-parent ask-button">
-    Frage stellen.
-    <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-  </ion-button>
-
-  <ion-button (click)="dismiss()">
-    Bye!
-  </ion-button>
+  <div class="avatar-talk">
+    <p class="avatar-text">
+      Hey, wie kann ich dir helfen?
+    </p>
+  </div>
+  <ion-item-divider>
+    <ion-item>
+      <ion-label position="floating">Gib hier deine Frage ein</ion-label>
+      <ion-input [(ngModel)]="avatarQuestion.value"></ion-input>
+    </ion-item>
+  </ion-item-divider>
+  
+  <div class="button-wrapper">
+    <ion-button class="pose-question-button" (click)="askedQuestion()" class="ion-activatable ripple-parent ask-button">
+      Frage stellen
+      <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+    </ion-button>
+    <ion-button (click)="dismiss()">
+      Bye!
+    </ion-button>
+  </div>
 </ion-content>

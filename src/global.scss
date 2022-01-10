@@ -24,3 +24,28 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-button {
+    height: 15.6vw;
+    font-size: 5vw; 
+    border-radius: 5px;
+    text-transform: none;
+}
+
+ion-toolbar {
+    --background: transparent;
+    background-image: var(--gradient-top);
+    color: var(--sugarly-color-background-comfortable);
+}
+
+.toolbar-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: red;
+}
+
+.back-arrow{
+    padding-right: 15px;
+}

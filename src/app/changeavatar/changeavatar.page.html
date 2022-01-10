@@ -12,12 +12,13 @@
         <ion-label #slideName>{{avatar.value.getName()}}</ion-label>
       </ion-slide>
     </ion-slides>
+   </div>
+  <div class="buttonWrapper">
+    <ion-button (click)="selectAvatar()">
+      Ausw&auml;hlen
+    </ion-button>
+    <ion-button (click)="dismiss()">
+      Abbrechen
+    </ion-button>
   </div>
-
-  <ion-button (click)="selectAvatar()">
-    Ausw&auml;hlen
-  </ion-button>
-  <ion-button (click)="dismiss()">
-    Abbrechen
-  </ion-button>
 </ion-content>

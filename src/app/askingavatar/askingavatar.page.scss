@@ -1,0 +1,32 @@
+.avatar-talk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: var(--ion-font-family);
+    color: var(--sugarly-color-text);
+    font-size: 5vw;
+}
+
+.avatar-text{
+    display: flex;
+    align-items: center;
+}
+
+ion-item-divider {  
+    padding-bottom: 10px;
+}
+
+.button-wrapper{
+    display: flex;
+    width: 100%;
+}
+
+ion-button {
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 50%;
+}
+
+.pose-question-button{
+    float:left;
+}

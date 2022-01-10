@@ -2,54 +2,72 @@
     height: 50%;
     width: 100%;
     overflow: hidden;
-
-    //Visibility
-    //background-color: violet;
 }
 
 .avatar-area {
     width: 50%;
     height: 100%;
     float: left;
-    //Visibility
-    //background-color: yellow;
+    justify-content: center;
+    display: flex;
+}
+
+.avatar-frame-outer {
+    display: block;
+    left: 0;
+    right: 0;
+    background-color: var(--ion-color-secondary);
+    margin: 3%;
+    padding: 3%;
+    border-radius: 3px;
+}
+
+.avatar-frame-inner {
+    height: 100%;
+    background-color: var(--sugarly-color-background-comfortable);
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.avatar-picture {
+    width: 100%;
 }
 
 .ask-area {
     width: 50%;
     height: 100%;
     float: right;
-
-    //Visibility
-    //background: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ask-button {
+    background-color: var(--ion-color-primary);
+    color: var(--sugarly-color-text);
     position: relative;
     overflow: hidden;
     white-space: normal;
-    margin-top: 50%;
     margin-right: 10%;
     width: 90%;
-    font-size: 3.4vw; 
 }
 
 .bottom-area {
     width: 100%;
-    height: 43%;
-    bottom: 7%;
+    height: 41%;
+    bottom: 8%;
     left: 0;
     position:absolute;
-    //Visibility
-    //background-color: red;
 }
 
 .wrapper-accordion {
-    width: 100%;
-    height: 100%;
-    position:absolute; 
-    //Visibility
-    //background-color: lightpink;
+    margin: 2%;
+    width: 96%;
+    height: 96%;
+    position:absolute;
+    border-radius: 5px;
+    background-color: var(--sugarly-color-background-comfortable); 
 }
 
 .faq-accordion {
@@ -57,21 +75,19 @@
     margin: 10px;
     padding: 10px;
     overflow: auto;
-    //Visibility
-    //background-color: lightseagreen;
 }
 
 .faq-title {
     width: 100%;
     display: inline-block;
-    align-self: center;
-    //TODO Farbe auf Textfarbe-Variable setzen
-    color: #161032;
+    color: var(--sugarly-color-text);
 }
 
 .faq-question {
     float:left;
-    text-align: center;
+    text-align: left;
+    font-size: 5.1vw;
+    font-weight: bold;
 }
 
 .faq-content-indicator {
@@ -79,6 +95,6 @@
 }
 
 .faq-content {
-    //TODO Farbe auf Textfarbe-Variable setzen
-    color: #161032;
+    font-size: 4vw;
+    color: var(--sugarly-color-text);
 }

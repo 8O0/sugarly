@@ -1,9 +1,11 @@
 import { FAQQuestion } from "./faq-question";
 
 export const FAQ_QUESTIONS = [
-    new FAQQuestion (1, 'Was ist diabetes?', 'Diabetes mellitus ist eine chronische Stoffwechselerkrankung. Der Körper kann den mit der Nahrung aufgenommenen Zucker (Glukose) nicht richtig verwerten.', false),
-    new FAQQuestion (2, 'Der zweite Titel', 'Ich bin der Beispieltext vom zweiten Element', false),
-    new FAQQuestion (3, 'Der dritte Titel', 'Ich bin der Beispieltext vom dritten Element', false),
-    new FAQQuestion (4, 'Der vierte Titel', 'Ich bin der Beispieltext vom vierten Element', false),
-    new FAQQuestion (5, 'Der fünfte Titel', 'Ich bin der Beispieltext vom fünften Element', false)
+    new FAQQuestion (1, 'Was ist Diabetes?', 'Diabetes mellitus ist eine chronische Stoffwechselerkrankung. Der Körper kann den mit der Nahrung aufgenommenen Zucker (Glukose) nicht richtig verwerten.', false),
+    new FAQQuestion (2, 'Führt das Essen von zu viel Zucker Süssigkeiten zu Diabetes?', 'Zucker oder Süssigkeiten allein führen nicht zu Diabetes. Ein übermässiger Verzehr von Süssigkeiten und Zucker sowie von fettreichen Nahrungsmitteln oder zuckerhaltigen Getränken führt jedoch meist zu Übergewicht und Fettleibigkeit, was die Entwicklung von Typ-2-Diabetes begünstigt. Weitere wesentliche Ursachen für Typ-2-Diabetes sind genetische Faktoren, Rauchen und Bewegungsmangel. Die Ursachen des Typ-1-Diabetes sind bislang nicht eindeutig identifiziert.', false),
+    new FAQQuestion (3, 'Warum ist Diabetes keine harmlose Krankheit?', 'Diabetes darf auf keinen Fall unterschätzt werden. Beide Diabetesformen, Typ-1 und Typ-2, sind behandel- aber nicht heilbar. Ausserdem ist es wichtig, die Stoffwechselkrankheit rechtzeitig zu erkennen und optimal zu behandeln. Denn auch die Qualität der Blutzuckereinstellung bestimmt das Risiko für Folgeerkrankungen.', false),
+    new FAQQuestion (4, 'Kann sportlich gleich viel leisten wie Menschen ohne Diabetes?', 'Generell können Menschen mit Typ-1-Diabetes ebenso wie Menschen mit Typ-2-Diabetes alle Sportarten ausüben. Wichtig ist es, dass ihr Diabetes vorab gut eingestellt ist und sie ihre Blutzuckerwerte entsprechend überwachen. Sie sollten auch gelernt haben, ihre Medikamente (insbesondere Insulin) an die körperliche Aktivität und die aktuellen Blutzuckerwerte anzupassen.', false),
+    new FAQQuestion (5, 'Was verursacht hohen Blutzucker?', 'Viele Dinge können einen hohen Blutzuckerspiegel verursachen, aber die grösste und direkteste Rolle bei der Erhöhung des Blutzuckers spielt das, was wir essen.', false),
+    new FAQQuestion (6, 'Was sind diabetische Fussprobleme?', 'Es gibt viele Komplikationen (Probleme), die an den Füssen auftreten können, wenn eine Person mit Diabetes diagnostiziert wird.', false),
+    new FAQQuestion (7, 'Wie werden diabetische Fussprobleme behandelt?', 'Die beste Vorbeugung gegen diabetische Fussprobleme ist die tägliche Kontrolle der Füsse und die Vermeidung von Fussverletzungen.', false)
 ]
