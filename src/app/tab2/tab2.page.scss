@@ -1,8 +1,57 @@
 mat-slider {
-    width: 300px;
+    width: 100%;
 }
 
-.playground-info {
-  float: right; 
-  padding-right: 20px
+.chart-wrapper {
+    border-radius: 50px;
+    height: 50%;
+    max-height: 50%;
+    width: 90%;
+    float:center;
+}
+
+.inputs-wrapper {
+  border-radius: 50px;
+  height: 40%;
+  width: 94%;
+  float:center; 
+  position: absolute;
+  bottom: 30px;
+}
+
+.chart {
+  height: 100%;
+}
+
+.playground-info{
+  padding: 2px;
+  display: block;
+  max-height: 80%;
+}
+
+.slider-wrapper {
+  display: block;
+  justify-content: center;
+  height: 100%;
+}
+
+.slider-pair {
+  max-height: 33%;
+  height: 30%;
+  display: block;
+  align-items: center;
+  width: 100%;
+}
+
+.slider-label{
+  max-width: 100%;
+  margin-left: 4%;
+  color: var(--sugarly-color-text);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.slider {
+  margin-left: 4%;
+  max-width: 100%;
 }

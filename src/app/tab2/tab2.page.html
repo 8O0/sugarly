@@ -2,14 +2,16 @@
   <ion-toolbar>
     <ion-title>
       <div class="toolbar-wrapper">
-        <ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon>
-        Playground
-        <ion-button class="playground-info" color="light" (click)="infoPressed()">
-          <ion-icon name="alert-circle-outline"></ion-icon>
-        </ion-button>
+        <div class="left-toolbar">
+          <ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon>
+          Playground
+        </div>
+        <div class="right-toolbar">
+          <ion-button class="playground-info" color="light" (click)="infoPressed()">
+            <ion-icon style="height:20px;width:20px;"name="alert-circle-outline"></ion-icon>
+          </ion-button>
+        </div>
       </div>
-      
-      
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -22,46 +24,47 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content style="
-   border-radius: 50px;
-    height: 50%;
-    width: 90%;
-    float:center;
-    ">
-    <canvas baseChart height="400" width="500" [datasets]="lineChartData" [labels]="lineChartLabels"
-      [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
-      [plugins]="lineChartPlugins">
-    </canvas>
+  <ion-content class="chart-wrapper">
+      <canvas baseChart height="90%" width="100%" [datasets]="lineChartData" [labels]="lineChartLabels"
+        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+        [plugins]="lineChartPlugins">
+      </canvas>
   </ion-content>
 
+  <ion-content class="inputs-wrapper">
+    <div class="slider-wrapper">
+      <div class="slider-pair">
+        <div class="slider-label">
+          <ion-label>Kohlenhydrate</ion-label>
+        </div>
+        <div class="slider">
+          <mat-slider #slidertop thumbLabel [(ngModel)]="carbohydrateSlider" (change)="refreshData()"
+            [displayWith]="formatLabel1" tickInterval="1" step="10" min="0" max="100" aria-label="units">
+          </mat-slider>
+        </div>
+      </div>
 
-  <ion-content style="
-  border-radius: 50px;
-  height: 40%;
-  width: 90%;
-  float:center; position: absolute;bottom: 30px;
-  ">
-    <ul style="list-style-type:none;padding:0;">
-      <li>
-        <ion-label>Kohlenhydrate</ion-label>
-        <mat-slider #slidertop thumbLabel [(ngModel)]="carbohydrateSlider" (change)="refreshData()"
-          [displayWith]="formatLabel1" tickInterval="1" step="10" min="0" max="100" aria-label="units">
-        </mat-slider>
-      </li>
-
-      <li>
-        <ion-label>Units</ion-label>
-        <mat-slider #slidermiddle (change)="refreshData()" thumbLabel [(ngModel)]="unitsSlider"
-          [displayWith]="formatLabel2" tickInterval="1" step="10" min="0" max="100" aria-label="units">
-        </mat-slider>
-      </li>
-
-      <li>
-        <ion-label>Bewegung in Stunden pro Tag</ion-label>
-        <mat-slider #sliderbottom (change)="refreshData()" thumbLabel [(ngModel)]="dailyActivity"
-          [displayWith]="formatLabel3" tickInterval="1" step="0.25" min="0" max="5" aria-label="units">
-        </mat-slider>
-      </li>
-    </ul>
+      <div class="slider-pair">
+        <div class="slider-label">
+          <ion-label>Units</ion-label>
+        </div>
+        <div class="slider">
+          <mat-slider #slidermiddle (change)="refreshData()" thumbLabel [(ngModel)]="unitsSlider"
+            [displayWith]="formatLabel2" tickInterval="1" step="10" min="0" max="100" aria-label="units">
+          </mat-slider>
+        </div>
+      </div>
+         
+      <div class="slider-pair">
+        <div class="slider-label">
+          <ion-label>Bewegung in Stunden pro Tag</ion-label>
+        </div>
+        <div class="slider">
+          <mat-slider #sliderbottom (change)="refreshData()" thumbLabel [(ngModel)]="dailyActivity"
+            [displayWith]="formatLabel3" tickInterval="1" step="0.25" min="0" max="5" aria-label="units">
+          </mat-slider>
+        </div>
+      </div>    
+    </div>
   </ion-content>
 </ion-content>

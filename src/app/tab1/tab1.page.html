@@ -2,8 +2,10 @@
   <ion-toolbar>
     <ion-title>
       <div class="toolbar-wrapper">
-        <ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon>
+        <div class="left-toolbar">
+          <ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon>
         Sugarly
+        </div>
       </div>
     </ion-title>
   </ion-toolbar>
@@ -28,7 +30,7 @@
     </div>
 
     <div class="ask-area">
-        <ion-button (click)="askQuestion()" class="ion-activatable ripple-parent ask-button">
+        <ion-button (click)="askQuestion()" class="ion-activatable ripple-parent ask-button adjustable-button">
           <p>Hast du eine Frage für mich?</p>
           <ion-ripple-effect type="unbounded"></ion-ripple-effect>
         </ion-button>
