@@ -1,26 +1,28 @@
-div {
-    background-color: #ffffff;
-    color: black;
-    padding: 10px;
+.content {
+    overflow: hidden;
 }
 
-table {
+.quiz-background {
+    background-color: var(--ion-color-primary);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tableLayout {
     width: 100%;
     border-collapse: collapse;
     box-shadow: black;
+    border: 1px, solid, black !important;
 }
 
-th, td {
+.tableLayout th, td {
     padding: 10px;
     border-bottom: 1px solid black;
     text-align: left;
 }
 
-table, th, td {
-    border: 1px, solid, black !important;
-}
-
-button {
+.buttonLayout {
     width: 100%;
     background-color: var(--ion-color-primary);
     font-size:xx-large;
@@ -28,27 +30,74 @@ button {
     border-radius: 10px;
 }
 
-.button-bottom {
-    position: absolute;
-    bottom: 0px;
+.centeredImage {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.wrapper-main {
+    display: relative;
     width: 100%;
-    margin-bottom: 100px;
+    height: 100%;
+}
+
+.wrapper-score {
+    position: absolute;
+    background-color: #ffffff;
+    color: black;
+    width: 94%;
+    left: 50%;
+    margin-left: -47%;
+    margin-top: 5%;
+    height: auto;
+}
+
+.startButton {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-left: -47%;
+    width: 94%;
+}
+
+.wrapper-question {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.overflow-quizoptions {
+    overflow: hidden;
+    position: absolute;
+    height: 93%;
+    width: 100%;
+    top: 0;
+}
+
+.wrapper-quizoptions {
+    background-color: var(--sugarly-color-background-comfortable);
+    border-radius: 80px 80px 10px 10px;
+    height: 40%;
+    width: 100%;
+    position: absolute;
+    bottom: -15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .imageButton {
     border-color: transparent;
     background-color: transparent;
+    padding-top: 10%;
 }
 
-.centeredImage {
-    display: block;
-    margin: auto;
+.answerText{
+    background-color: #ffffff;
 }
 
-/*.wrapper-question {
-    visibility: visible;
+.nextButton {
+    width: 94%;
 }
-*/
-/*.wrapper-answer {
-    visibility: hidden;
-}*/

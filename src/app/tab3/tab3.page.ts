@@ -14,17 +14,20 @@ interface Question {
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  questionShow = true;
+  questionShow = false;
   scoreShow = true;
-  answerShow = true;
+  answerShow = false;
+  noHeader = false;
   
 
   showQuestion() {
-   this.questionShow = !this.questionShow;
-   this.scoreShow = !this.scoreShow;
+    this.noHeader = true;
+    this.questionShow = !this.questionShow;
+    this.scoreShow = !this.scoreShow;
   }
 
   showAnswer() {
+    this.noHeader = true;
     this.questionShow = !this.questionShow;
     this.answerShow = !this.answerShow;
    }
